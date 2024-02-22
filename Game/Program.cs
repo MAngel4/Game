@@ -83,9 +83,25 @@ class Program
 
         }
 
+        private void delenie(double del)
+        {
+            int g;
+            Console.WriteLine($"Введите число, на которое хотите проверить, делится ли число нацело");
+            string? g1 = Console.ReadLine();
+            g = Convert.ToInt32(g1);
+            if (del % g ==0)
+            {
+                Console.WriteLine($"Число делится без остатка на {g}");
+            }
+            else
+            {
+                Console.WriteLine($"Число не делится без остатка на {g}");
+            }
+        }
+
         public void Help()
         {
-            int b = 0;
+            int b = 100;
             do
             {
                 
@@ -113,7 +129,8 @@ class Program
                         }
                         Console.WriteLine($"Ваш Баланс = {b}\n");
                         Console.WriteLine($"1)подсказка о диапозоне, где стоит число(10 очков)\n" +
-                    $"2)Подсказка о том, число четное или нет(20 очков)\n");
+                                          $"2)Подсказка о том, число четное или нет(20 очков)\n" +
+                                          $"3) Подсказка о том, делится ли числа нацело(30 очков)\n");
                         string numberhelp = Console.ReadLine();
                         switch (numberhelp)
                         {
@@ -129,6 +146,15 @@ class Program
                                 Console.WriteLine($"Баланс = {b}\n");
                                 coast(b);
                                 continue;
+                                case "3":
+                                {
+                                    delenie(n);
+                                    b = b - 30;
+                                    Console.WriteLine($"Баланс = {b}\n");
+                                    coast(b);
+                                    continue;
+
+                                }
                         }    
                         
                         break;
