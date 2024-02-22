@@ -4,11 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        
         Number number = new Number();
         number.Set();
         Console.Write(number.Get());
         number.Help();
         
+
 
     }
     public class Number
@@ -71,10 +73,10 @@ class Program
         }
         public void Help()
         {
+            int b = 100;
             do
             {
-                int b = 100;
-                Console.WriteLine($"Баланс = {b}\n");
+                
                 Console.WriteLine($"Введите Предпологаемое Число\n");
                 string? x = Console.ReadLine();
                 x1 = Convert.ToInt32(x);
@@ -86,23 +88,36 @@ class Program
                 {
                     Console.WriteLine($"Вы угадали число!");
                 }
-                Console.WriteLine($"Напишите на цифру 1-9 для получения подсказки о числе\n" +
-                    $"1)подсказка о диапозоне, где стоит число(10 очков)\n" +
-                    $"2)Подсказка о том, число четное или нет(20 очков)\n");
-                string ? x2 = Console.ReadLine();
-                x3 = Convert.ToInt32(x2);
-                switch(x3)
+                Console.WriteLine($"Напишите help для получения подсказки о числе\n");
+                string userInput = Console.ReadLine();
+                
+                switch (userInput)
                 {
-                    case 1:
-                    diaposon(n,x1);
-                        b = b - 10;
-                        Console.WriteLine($"Баланс = {b}\n");
-                        continue;
-                    case 2:
-                        сhetornot(n);
-                        b = b - 20;
-                        Console.WriteLine($"Баланс = {b}\n");
+                    case "help":
+                        Console.WriteLine($"Ваш Баланс = {b}\n");
+                        Console.WriteLine($"1)подсказка о диапозоне, где стоит число(10 очков)\n" +
+                    $"2)Подсказка о том, число четное или нет(20 очков)\n");
+                        string numberhelp = Console.ReadLine();
+                        switch (numberhelp)
+                        {
+                            case "1":
+                                diaposon(n, x1);
+                                b = b - 10;
+                                Console.WriteLine($"Баланс = {b}\n");
+                                continue;
+                        }    
+                        
                         break;
+                    default:
+                        if (x1 != n)
+                        {
+                            Console.WriteLine($"Вы не угадали число!");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Вы угадали число!");
+                        }
+                        continue;
 
                 }
 
