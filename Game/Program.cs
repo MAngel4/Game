@@ -71,9 +71,21 @@ class Program
                 Console.WriteLine($"Число нечетное\n");
             }
         }
+        private void coast (int c)
+        { 
+            if(c<=0)
+            {
+
+                Console.WriteLine($"Ваш балнас = 0");
+                
+            }
+            
+
+        }
+
         public void Help()
         {
-            int b = 100;
+            int b = 0;
             do
             {
                 
@@ -94,6 +106,11 @@ class Program
                 switch (userInput)
                 {
                     case "help":
+                        if(b ==0)
+                        {
+                            Console.WriteLine($"Ваш баланс = 0, вы больше не можете использовать подсказки");
+                            continue;
+                        }
                         Console.WriteLine($"Ваш Баланс = {b}\n");
                         Console.WriteLine($"1)подсказка о диапозоне, где стоит число(10 очков)\n" +
                     $"2)Подсказка о том, число четное или нет(20 очков)\n");
@@ -104,6 +121,13 @@ class Program
                                 diaposon(n, x1);
                                 b = b - 10;
                                 Console.WriteLine($"Баланс = {b}\n");
+                                coast(b);
+                                continue;
+                            case "2":
+                                сhetornot(n);
+                                b = b - 20;
+                                Console.WriteLine($"Баланс = {b}\n");
+                                coast(b);
                                 continue;
                         }    
                         
