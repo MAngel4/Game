@@ -3,22 +3,17 @@ using System.Collections;
 class Program
 {
     static void Main(string[] args)
-    {
-        
+    {        
         Number number = new Number();
         number.Set();
         Console.Write(number.Get());
         number.Help();
-        
-
-
     }
     public class Number
     {
         private int n;
         private int x1;
         private int x3;
-
 
         public void Set()
         {
@@ -45,8 +40,7 @@ class Program
             }
             else
             {
-                // Выводим подсказку
-                Console.WriteLine($"Число находится в промежутке от {lowpoli} до {hightpoli}");
+                
 
                 // Проверяем, в каком промежутке находится загаданное число
                 if (n >= lowpoli && n < hightpoli)
@@ -75,9 +69,7 @@ class Program
         { 
             if(c<=0)
             {
-
-                Console.WriteLine($"Ваш балнас = 0");
-                
+                Console.WriteLine($"Ваш балнас = 0");   
             }
             
 
@@ -98,13 +90,13 @@ class Program
                 Console.WriteLine($"Число не делится без остатка на {g}");
             }
         }
+        
 
         public void Help()
         {
             int b = 100;
             do
             {
-                
                 Console.WriteLine($"Введите Предпологаемое Число\n");
                 string? x = Console.ReadLine();
                 x1 = Convert.ToInt32(x);
@@ -153,7 +145,6 @@ class Program
                                     Console.WriteLine($"Баланс = {b}\n");
                                     coast(b);
                                     continue;
-
                                 }
                         }    
                         
@@ -174,12 +165,7 @@ class Program
                 
             }
             while (n != x1);
-           
-
-            
-          
         }
-        
 
         public void toString()
         {
